@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.17)
 
-project(tri)
+project(gl)
 
 add_executable(${PROJECT_NAME} glad.c main.cpp)
 

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dude/Documents/projects/c++/opengl_tut
+CMAKE_SOURCE_DIR = /home/dude/Documents/projects/c++/openGL_tutorial
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dude/Documents/projects/c++/opengl_tut
+CMAKE_BINARY_DIR = /home/dude/Documents/projects/c++/openGL_tutorial
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dude/Documents/projects/c++/opengl_tut/CMakeFiles /home/dude/Documents/projects/c++/opengl_tut//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dude/Documents/projects/c++/openGL_tutorial/CMakeFiles /home/dude/Documents/projects/c++/openGL_tutorial//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dude/Documents/projects/c++/opengl_tut/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dude/Documents/projects/c++/openGL_tutorial/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named tri
+# Target rules for targets named gl
 
 # Build rule for target.
-tri: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tri
-.PHONY : tri
+gl: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gl
+.PHONY : gl
 
 # fast build rule for target.
-tri/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tri.dir/build.make CMakeFiles/tri.dir/build
-.PHONY : tri/fast
+gl/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/build
+.PHONY : gl/fast
 
 glad.o: glad.c.o
 .PHONY : glad.o
 
 # target to build an object file
 glad.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tri.dir/build.make CMakeFiles/tri.dir/glad.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/glad.c.o
 .PHONY : glad.c.o
 
 glad.i: glad.c.i
@@ -142,7 +142,7 @@ glad.i: glad.c.i
 
 # target to preprocess a source file
 glad.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tri.dir/build.make CMakeFiles/tri.dir/glad.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/glad.c.i
 .PHONY : glad.c.i
 
 glad.s: glad.c.s
@@ -150,7 +150,7 @@ glad.s: glad.c.s
 
 # target to generate assembly for a file
 glad.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tri.dir/build.make CMakeFiles/tri.dir/glad.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/glad.c.s
 .PHONY : glad.c.s
 
 main.o: main.cpp.o
@@ -158,7 +158,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tri.dir/build.make CMakeFiles/tri.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -166,7 +166,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tri.dir/build.make CMakeFiles/tri.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -174,7 +174,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tri.dir/build.make CMakeFiles/tri.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -185,7 +185,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... tri"
+	@echo "... gl"
 	@echo "... glad.o"
 	@echo "... glad.i"
 	@echo "... glad.s"

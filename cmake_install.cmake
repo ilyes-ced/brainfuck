@@ -1,4 +1,4 @@
-# Install script for directory: /home/dude/Documents/projects/c++/opengl_tut
+# Install script for directory: /home/dude/Documents/projects/c++/openGL_tutorial
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/dude/Documents/projects/c++/opengl_tut/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/dude/Documents/projects/c++/openGL_tutorial/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
