@@ -1,36 +1,3 @@
-//#include <glad/glad.h>
-//#include <GLFW/glfw3.h>
-
-
-//int main(){
-//    glfwInit();
-//    GLFWwindow* w = glfwCreateWindow(600,600, "this", NULL, NULL);
-//    glfwMakeContextCurrent(w);
-//    gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-//    float t[] = 
-//    {
-//        -0.5f, -0.5f, 0.f,
-//        0.f, 0.5f, 0.f,
-//        0.5f, -0.5f, 0.f
-//    };
-//    uint32_t v;
-//    glGenBuffers(1, &v);
-//    glBindBuffer(GL_ARRAY_BUFFER, v);
-//    glBufferData(GL_ARRAY_BUFFER, sizeof(t)*sizeof(t)/sizeof(t[0]), &t[0], GL_STATIC_DRAW);
-//    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float)*3, (void*)0);
-//    glEnableVertexAttribArray(0);
-//    glViewport(0, 0, 600, 600);
-//    while(!glfwWindowShouldClose(w)){
-//        glClear(GL_COLOR_BUFFER_BIT);
-//        glDrawArrays(GL_TRIANGLES, 0, 3);
-//        glfwSwapBuffers(w);
-//        glfwPollEvents();
-//    }
-//
-
-
-
-
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
@@ -65,6 +32,14 @@ int main(){
         -0.5f, -0.5f * float(1.73205080757) / 3, 0.0f,
         0.5f, -0.5f * float(1.73205080757) / 3, 0.0f,
         0.0f, 0.5f * float(1.73205080757) * 2 / 3, 0.0f
+        -0.5f / 2, 0.5f * float(1.73205080757) / 6, 0.0f,
+        0.5f / 2, 0.5f * float(1.73205080757) / 6, 0.0f,
+        0.0f, -0.5f * float(1.73205080757) / 3, 0.0f
+    };
+    GLuint indecies[]= {
+        0, 3, 5,
+        3, 2, 4,
+        5, 4, 1
     };
 
     GLFWwindow* window = glfwCreateWindow(600,600, "start", NULL, NULL);
@@ -94,39 +69,45 @@ int main(){
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
 
-    GLuint VAO, VBO;
+    GLuint VAO, VBO, EBO;
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
+    glGenBuffers(1, &EBO);
 
     glBindVertexArray(VAO);
 
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indecies), indecies, GL_STATIC_DRAW);
 
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0) ;
     glEnableVertexAttribArray(0);
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
 
 
-    glClearColor(0.07f, 0.13f, 0.17, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
-    glfwSwapBuffers(window);
+    //glClearColor(0.07f, 0.13f, 0.17, 1.0f);
+    //glClear(GL_COLOR_BUFFER_BIT);
+    //glfwSwapBuffers(window);
 
 
     while(!glfwWindowShouldClose(window)){
-        //glfwPollEvents();
+        glfwPollEvents();
         glClearColor(0.07f, 0.13f, 0.17, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         glUseProgram(shaderProgram);
         glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        //glDrawArrays(GL_TRIANGLES, 0, 3);
+        glDrawElements(GL_TRIANGLES, 9, GL_UNSIGNED_INT, 0);
         glfwSwapBuffers(window);
     }
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
+    glDeleteBuffers(1, &EBO);
     glDeleteProgram(shaderProgram);
 
     glfwDestroyWindow(window);

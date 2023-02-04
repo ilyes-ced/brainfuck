@@ -1,5 +1,5 @@
 CMakeFiles/gl.dir/main.cpp.o: \
- /home/dude/Documents/projects/c++/openGL_tutorial/main.cpp \
+ /home/dude/Documents/projects/openGL_tutorial/main.cpp \
  /usr/include/stdc-predef.h /usr/include/glad/glad.h \
  /usr/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
