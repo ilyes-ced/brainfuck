@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/opengl_tut.dir/VBO.cpp.o CMakeFiles/opengl_tut.dir/EBO.cpp.o CMakeFiles/opengl_tut.dir/VAO.cpp.o CMakeFiles/opengl_tut.dir/shaderClass.cpp.o CMakeFiles/opengl_tut.dir/glad.c.o CMakeFiles/opengl_tut.dir/main.cpp.o -o opengl_tut  -lGL -ldl -lglfw 

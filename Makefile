@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named gl
+# Target rules for targets named opengl_tut
 
 # Build rule for target.
-gl: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gl
-.PHONY : gl
+opengl_tut: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 opengl_tut
+.PHONY : opengl_tut
 
 # fast build rule for target.
-gl/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/build
-.PHONY : gl/fast
+opengl_tut/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/build
+.PHONY : opengl_tut/fast
 
 EBO.o: EBO.cpp.o
 .PHONY : EBO.o
 
 # target to build an object file
 EBO.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/EBO.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/EBO.cpp.o
 .PHONY : EBO.cpp.o
 
 EBO.i: EBO.cpp.i
@@ -142,7 +142,7 @@ EBO.i: EBO.cpp.i
 
 # target to preprocess a source file
 EBO.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/EBO.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/EBO.cpp.i
 .PHONY : EBO.cpp.i
 
 EBO.s: EBO.cpp.s
@@ -150,7 +150,7 @@ EBO.s: EBO.cpp.s
 
 # target to generate assembly for a file
 EBO.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/EBO.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/EBO.cpp.s
 .PHONY : EBO.cpp.s
 
 VAO.o: VAO.cpp.o
@@ -158,7 +158,7 @@ VAO.o: VAO.cpp.o
 
 # target to build an object file
 VAO.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/VAO.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/VAO.cpp.o
 .PHONY : VAO.cpp.o
 
 VAO.i: VAO.cpp.i
@@ -166,7 +166,7 @@ VAO.i: VAO.cpp.i
 
 # target to preprocess a source file
 VAO.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/VAO.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/VAO.cpp.i
 .PHONY : VAO.cpp.i
 
 VAO.s: VAO.cpp.s
@@ -174,7 +174,7 @@ VAO.s: VAO.cpp.s
 
 # target to generate assembly for a file
 VAO.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/VAO.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/VAO.cpp.s
 .PHONY : VAO.cpp.s
 
 VBO.o: VBO.cpp.o
@@ -182,7 +182,7 @@ VBO.o: VBO.cpp.o
 
 # target to build an object file
 VBO.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/VBO.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/VBO.cpp.o
 .PHONY : VBO.cpp.o
 
 VBO.i: VBO.cpp.i
@@ -190,7 +190,7 @@ VBO.i: VBO.cpp.i
 
 # target to preprocess a source file
 VBO.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/VBO.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/VBO.cpp.i
 .PHONY : VBO.cpp.i
 
 VBO.s: VBO.cpp.s
@@ -198,7 +198,7 @@ VBO.s: VBO.cpp.s
 
 # target to generate assembly for a file
 VBO.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/VBO.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/VBO.cpp.s
 .PHONY : VBO.cpp.s
 
 glad.o: glad.c.o
@@ -206,7 +206,7 @@ glad.o: glad.c.o
 
 # target to build an object file
 glad.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/glad.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/glad.c.o
 .PHONY : glad.c.o
 
 glad.i: glad.c.i
@@ -214,7 +214,7 @@ glad.i: glad.c.i
 
 # target to preprocess a source file
 glad.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/glad.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/glad.c.i
 .PHONY : glad.c.i
 
 glad.s: glad.c.s
@@ -222,7 +222,7 @@ glad.s: glad.c.s
 
 # target to generate assembly for a file
 glad.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/glad.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/glad.c.s
 .PHONY : glad.c.s
 
 main.o: main.cpp.o
@@ -230,7 +230,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -238,7 +238,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -246,7 +246,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 shaderClass.o: shaderClass.cpp.o
@@ -254,7 +254,7 @@ shaderClass.o: shaderClass.cpp.o
 
 # target to build an object file
 shaderClass.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/shaderClass.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/shaderClass.cpp.o
 .PHONY : shaderClass.cpp.o
 
 shaderClass.i: shaderClass.cpp.i
@@ -262,7 +262,7 @@ shaderClass.i: shaderClass.cpp.i
 
 # target to preprocess a source file
 shaderClass.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/shaderClass.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/shaderClass.cpp.i
 .PHONY : shaderClass.cpp.i
 
 shaderClass.s: shaderClass.cpp.s
@@ -270,7 +270,7 @@ shaderClass.s: shaderClass.cpp.s
 
 # target to generate assembly for a file
 shaderClass.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/shaderClass.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/shaderClass.cpp.s
 .PHONY : shaderClass.cpp.s
 
 # Help Target
@@ -281,7 +281,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... gl"
+	@echo "... opengl_tut"
 	@echo "... EBO.o"
 	@echo "... EBO.i"
 	@echo "... EBO.s"

@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/dude/Documents/projects/openGL_tutorial
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/gl.dir/all
+all: CMakeFiles/opengl_tut.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/gl.dir/clean
+clean: CMakeFiles/opengl_tut.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/gl.dir
+# Target rules for target CMakeFiles/opengl_tut.dir
 
 # All Build rule for target.
-CMakeFiles/gl.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dude/Documents/projects/openGL_tutorial/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target gl"
-.PHONY : CMakeFiles/gl.dir/all
+CMakeFiles/opengl_tut.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dude/Documents/projects/openGL_tutorial/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target opengl_tut"
+.PHONY : CMakeFiles/opengl_tut.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/gl.dir/rule: cmake_check_build_system
+CMakeFiles/opengl_tut.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/dude/Documents/projects/openGL_tutorial/CMakeFiles 7
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/gl.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/opengl_tut.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/dude/Documents/projects/openGL_tutorial/CMakeFiles 0
-.PHONY : CMakeFiles/gl.dir/rule
+.PHONY : CMakeFiles/opengl_tut.dir/rule
 
 # Convenience name for target.
-gl: CMakeFiles/gl.dir/rule
-.PHONY : gl
+opengl_tut: CMakeFiles/opengl_tut.dir/rule
+.PHONY : opengl_tut
 
 # clean rule for target.
-CMakeFiles/gl.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/clean
-.PHONY : CMakeFiles/gl.dir/clean
+CMakeFiles/opengl_tut.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_tut.dir/build.make CMakeFiles/opengl_tut.dir/clean
+.PHONY : CMakeFiles/opengl_tut.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

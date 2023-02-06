@@ -43,5 +43,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/gl.dir/DependInfo.cmake"
+  "CMakeFiles/opengl_tut.dir/DependInfo.cmake"
   )
