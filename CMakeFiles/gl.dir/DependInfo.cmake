@@ -9,7 +9,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/dude/Documents/projects/openGL_tutorial/glad.c" "CMakeFiles/gl.dir/glad.c.o" "gcc" "CMakeFiles/gl.dir/glad.c.o.d"
+  "/home/dude/Documents/projects/openGL_tutorial/EBO.cpp" "CMakeFiles/gl.dir/EBO.cpp.o" "gcc" "CMakeFiles/gl.dir/EBO.cpp.o.d"
+  "/home/dude/Documents/projects/openGL_tutorial/VAO.cpp" "CMakeFiles/gl.dir/VAO.cpp.o" "gcc" "CMakeFiles/gl.dir/VAO.cpp.o.d"
+  "/home/dude/Documents/projects/openGL_tutorial/VBO.cpp" "CMakeFiles/gl.dir/VBO.cpp.o" "gcc" "CMakeFiles/gl.dir/VBO.cpp.o.d"
   "/home/dude/Documents/projects/openGL_tutorial/main.cpp" "CMakeFiles/gl.dir/main.cpp.o" "gcc" "CMakeFiles/gl.dir/main.cpp.o.d"
+  "/home/dude/Documents/projects/openGL_tutorial/shaderClass.cpp" "CMakeFiles/gl.dir/shaderClass.cpp.o" "gcc" "CMakeFiles/gl.dir/shaderClass.cpp.o.d"
   )
 
 # Targets to which this target links.

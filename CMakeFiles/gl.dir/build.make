@@ -69,10 +69,66 @@ include CMakeFiles/gl.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/gl.dir/flags.make
 
+CMakeFiles/gl.dir/VBO.cpp.o: CMakeFiles/gl.dir/flags.make
+CMakeFiles/gl.dir/VBO.cpp.o: VBO.cpp
+CMakeFiles/gl.dir/VBO.cpp.o: CMakeFiles/gl.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dude/Documents/projects/openGL_tutorial/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/gl.dir/VBO.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gl.dir/VBO.cpp.o -MF CMakeFiles/gl.dir/VBO.cpp.o.d -o CMakeFiles/gl.dir/VBO.cpp.o -c /home/dude/Documents/projects/openGL_tutorial/VBO.cpp
+
+CMakeFiles/gl.dir/VBO.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gl.dir/VBO.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dude/Documents/projects/openGL_tutorial/VBO.cpp > CMakeFiles/gl.dir/VBO.cpp.i
+
+CMakeFiles/gl.dir/VBO.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gl.dir/VBO.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dude/Documents/projects/openGL_tutorial/VBO.cpp -o CMakeFiles/gl.dir/VBO.cpp.s
+
+CMakeFiles/gl.dir/EBO.cpp.o: CMakeFiles/gl.dir/flags.make
+CMakeFiles/gl.dir/EBO.cpp.o: EBO.cpp
+CMakeFiles/gl.dir/EBO.cpp.o: CMakeFiles/gl.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dude/Documents/projects/openGL_tutorial/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/gl.dir/EBO.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gl.dir/EBO.cpp.o -MF CMakeFiles/gl.dir/EBO.cpp.o.d -o CMakeFiles/gl.dir/EBO.cpp.o -c /home/dude/Documents/projects/openGL_tutorial/EBO.cpp
+
+CMakeFiles/gl.dir/EBO.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gl.dir/EBO.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dude/Documents/projects/openGL_tutorial/EBO.cpp > CMakeFiles/gl.dir/EBO.cpp.i
+
+CMakeFiles/gl.dir/EBO.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gl.dir/EBO.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dude/Documents/projects/openGL_tutorial/EBO.cpp -o CMakeFiles/gl.dir/EBO.cpp.s
+
+CMakeFiles/gl.dir/VAO.cpp.o: CMakeFiles/gl.dir/flags.make
+CMakeFiles/gl.dir/VAO.cpp.o: VAO.cpp
+CMakeFiles/gl.dir/VAO.cpp.o: CMakeFiles/gl.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dude/Documents/projects/openGL_tutorial/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/gl.dir/VAO.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gl.dir/VAO.cpp.o -MF CMakeFiles/gl.dir/VAO.cpp.o.d -o CMakeFiles/gl.dir/VAO.cpp.o -c /home/dude/Documents/projects/openGL_tutorial/VAO.cpp
+
+CMakeFiles/gl.dir/VAO.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gl.dir/VAO.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dude/Documents/projects/openGL_tutorial/VAO.cpp > CMakeFiles/gl.dir/VAO.cpp.i
+
+CMakeFiles/gl.dir/VAO.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gl.dir/VAO.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dude/Documents/projects/openGL_tutorial/VAO.cpp -o CMakeFiles/gl.dir/VAO.cpp.s
+
+CMakeFiles/gl.dir/shaderClass.cpp.o: CMakeFiles/gl.dir/flags.make
+CMakeFiles/gl.dir/shaderClass.cpp.o: shaderClass.cpp
+CMakeFiles/gl.dir/shaderClass.cpp.o: CMakeFiles/gl.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dude/Documents/projects/openGL_tutorial/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/gl.dir/shaderClass.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gl.dir/shaderClass.cpp.o -MF CMakeFiles/gl.dir/shaderClass.cpp.o.d -o CMakeFiles/gl.dir/shaderClass.cpp.o -c /home/dude/Documents/projects/openGL_tutorial/shaderClass.cpp
+
+CMakeFiles/gl.dir/shaderClass.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gl.dir/shaderClass.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dude/Documents/projects/openGL_tutorial/shaderClass.cpp > CMakeFiles/gl.dir/shaderClass.cpp.i
+
+CMakeFiles/gl.dir/shaderClass.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gl.dir/shaderClass.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dude/Documents/projects/openGL_tutorial/shaderClass.cpp -o CMakeFiles/gl.dir/shaderClass.cpp.s
+
 CMakeFiles/gl.dir/glad.c.o: CMakeFiles/gl.dir/flags.make
 CMakeFiles/gl.dir/glad.c.o: glad.c
 CMakeFiles/gl.dir/glad.c.o: CMakeFiles/gl.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dude/Documents/projects/openGL_tutorial/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/gl.dir/glad.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dude/Documents/projects/openGL_tutorial/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/gl.dir/glad.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/gl.dir/glad.c.o -MF CMakeFiles/gl.dir/glad.c.o.d -o CMakeFiles/gl.dir/glad.c.o -c /home/dude/Documents/projects/openGL_tutorial/glad.c
 
 CMakeFiles/gl.dir/glad.c.i: cmake_force
@@ -86,7 +142,7 @@ CMakeFiles/gl.dir/glad.c.s: cmake_force
 CMakeFiles/gl.dir/main.cpp.o: CMakeFiles/gl.dir/flags.make
 CMakeFiles/gl.dir/main.cpp.o: main.cpp
 CMakeFiles/gl.dir/main.cpp.o: CMakeFiles/gl.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dude/Documents/projects/openGL_tutorial/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/gl.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dude/Documents/projects/openGL_tutorial/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/gl.dir/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gl.dir/main.cpp.o -MF CMakeFiles/gl.dir/main.cpp.o.d -o CMakeFiles/gl.dir/main.cpp.o -c /home/dude/Documents/projects/openGL_tutorial/main.cpp
 
 CMakeFiles/gl.dir/main.cpp.i: cmake_force
@@ -99,17 +155,25 @@ CMakeFiles/gl.dir/main.cpp.s: cmake_force
 
 # Object files for target gl
 gl_OBJECTS = \
+"CMakeFiles/gl.dir/VBO.cpp.o" \
+"CMakeFiles/gl.dir/EBO.cpp.o" \
+"CMakeFiles/gl.dir/VAO.cpp.o" \
+"CMakeFiles/gl.dir/shaderClass.cpp.o" \
 "CMakeFiles/gl.dir/glad.c.o" \
 "CMakeFiles/gl.dir/main.cpp.o"
 
 # External object files for target gl
 gl_EXTERNAL_OBJECTS =
 
+gl: CMakeFiles/gl.dir/VBO.cpp.o
+gl: CMakeFiles/gl.dir/EBO.cpp.o
+gl: CMakeFiles/gl.dir/VAO.cpp.o
+gl: CMakeFiles/gl.dir/shaderClass.cpp.o
 gl: CMakeFiles/gl.dir/glad.c.o
 gl: CMakeFiles/gl.dir/main.cpp.o
 gl: CMakeFiles/gl.dir/build.make
 gl: CMakeFiles/gl.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dude/Documents/projects/openGL_tutorial/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable gl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dude/Documents/projects/openGL_tutorial/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable gl"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gl.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -81,12 +81,12 @@ clean: CMakeFiles/gl.dir/clean
 CMakeFiles/gl.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dude/Documents/projects/openGL_tutorial/CMakeFiles --progress-num=1,2,3 "Built target gl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dude/Documents/projects/openGL_tutorial/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target gl"
 .PHONY : CMakeFiles/gl.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/gl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dude/Documents/projects/openGL_tutorial/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dude/Documents/projects/openGL_tutorial/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/gl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/dude/Documents/projects/openGL_tutorial/CMakeFiles 0
 .PHONY : CMakeFiles/gl.dir/rule

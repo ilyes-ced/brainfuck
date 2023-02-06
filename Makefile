@@ -129,6 +129,78 @@ gl/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/build
 .PHONY : gl/fast
 
+EBO.o: EBO.cpp.o
+.PHONY : EBO.o
+
+# target to build an object file
+EBO.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/EBO.cpp.o
+.PHONY : EBO.cpp.o
+
+EBO.i: EBO.cpp.i
+.PHONY : EBO.i
+
+# target to preprocess a source file
+EBO.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/EBO.cpp.i
+.PHONY : EBO.cpp.i
+
+EBO.s: EBO.cpp.s
+.PHONY : EBO.s
+
+# target to generate assembly for a file
+EBO.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/EBO.cpp.s
+.PHONY : EBO.cpp.s
+
+VAO.o: VAO.cpp.o
+.PHONY : VAO.o
+
+# target to build an object file
+VAO.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/VAO.cpp.o
+.PHONY : VAO.cpp.o
+
+VAO.i: VAO.cpp.i
+.PHONY : VAO.i
+
+# target to preprocess a source file
+VAO.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/VAO.cpp.i
+.PHONY : VAO.cpp.i
+
+VAO.s: VAO.cpp.s
+.PHONY : VAO.s
+
+# target to generate assembly for a file
+VAO.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/VAO.cpp.s
+.PHONY : VAO.cpp.s
+
+VBO.o: VBO.cpp.o
+.PHONY : VBO.o
+
+# target to build an object file
+VBO.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/VBO.cpp.o
+.PHONY : VBO.cpp.o
+
+VBO.i: VBO.cpp.i
+.PHONY : VBO.i
+
+# target to preprocess a source file
+VBO.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/VBO.cpp.i
+.PHONY : VBO.cpp.i
+
+VBO.s: VBO.cpp.s
+.PHONY : VBO.s
+
+# target to generate assembly for a file
+VBO.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/VBO.cpp.s
+.PHONY : VBO.cpp.s
+
 glad.o: glad.c.o
 .PHONY : glad.o
 
@@ -177,6 +249,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+shaderClass.o: shaderClass.cpp.o
+.PHONY : shaderClass.o
+
+# target to build an object file
+shaderClass.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/shaderClass.cpp.o
+.PHONY : shaderClass.cpp.o
+
+shaderClass.i: shaderClass.cpp.i
+.PHONY : shaderClass.i
+
+# target to preprocess a source file
+shaderClass.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/shaderClass.cpp.i
+.PHONY : shaderClass.cpp.i
+
+shaderClass.s: shaderClass.cpp.s
+.PHONY : shaderClass.s
+
+# target to generate assembly for a file
+shaderClass.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl.dir/build.make CMakeFiles/gl.dir/shaderClass.cpp.s
+.PHONY : shaderClass.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +282,24 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... gl"
+	@echo "... EBO.o"
+	@echo "... EBO.i"
+	@echo "... EBO.s"
+	@echo "... VAO.o"
+	@echo "... VAO.i"
+	@echo "... VAO.s"
+	@echo "... VBO.o"
+	@echo "... VBO.i"
+	@echo "... VBO.s"
 	@echo "... glad.o"
 	@echo "... glad.i"
 	@echo "... glad.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... shaderClass.o"
+	@echo "... shaderClass.i"
+	@echo "... shaderClass.s"
 .PHONY : help
 
 

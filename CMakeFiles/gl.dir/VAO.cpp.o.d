@@ -1,7 +1,8 @@
-CMakeFiles/tri.dir/main.cpp.o: \
- /home/dude/Documents/projects/c++/opengl_tut/main.cpp \
- /usr/include/stdc-predef.h /usr/include/glad/glad.h \
- /usr/include/KHR/khrplatform.h \
+CMakeFiles/gl.dir/VAO.cpp.o: \
+ /home/dude/Documents/projects/openGL_tutorial/VAO.cpp \
+ /usr/include/stdc-predef.h \
+ /home/dude/Documents/projects/openGL_tutorial/VAO.h \
+ /usr/include/glad/glad.h /usr/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -17,5 +18,4 @@ CMakeFiles/tri.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /usr/include/GLFW/glfw3.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h
+ /home/dude/Documents/projects/openGL_tutorial/VBO.h

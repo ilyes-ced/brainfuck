@@ -1,8 +1,16 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/gl.dir/EBO.cpp.o"
+  "CMakeFiles/gl.dir/EBO.cpp.o.d"
+  "CMakeFiles/gl.dir/VAO.cpp.o"
+  "CMakeFiles/gl.dir/VAO.cpp.o.d"
+  "CMakeFiles/gl.dir/VBO.cpp.o"
+  "CMakeFiles/gl.dir/VBO.cpp.o.d"
   "CMakeFiles/gl.dir/glad.c.o"
   "CMakeFiles/gl.dir/glad.c.o.d"
   "CMakeFiles/gl.dir/main.cpp.o"
   "CMakeFiles/gl.dir/main.cpp.o.d"
+  "CMakeFiles/gl.dir/shaderClass.cpp.o"
+  "CMakeFiles/gl.dir/shaderClass.cpp.o.d"
   "gl"
   "gl.pdb"
 )
