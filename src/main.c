@@ -1,51 +1,93 @@
 #include <stdio.h>
-#include <time.h>
-#define memory_size 30000
+#include <stdlib.h>
+#define MEMORY_SIZE 30000
+#define PROGRAMM_SIZE 30000
+#define MAX_LOOP_ITER 10000
 
-unsigned char memory[memory_size];
-int pointer = 0;
 
-// function declaration
+struct Brainfuck {
+    // memory pointer(cursor)
+	long mem_ptr;
+    // instruction pointer(cursor)
+	long ins_ptr;
+    unsigned char programm[PROGRAMM_SIZE];
+    unsigned char memory[MEMORY_SIZE];
+};
+
+
 int is_operation(char c);
-void operation(char c);
-
-
-
-
+void operation(char c, struct Brainfuck *brainfuck);
+void loop(char c,  struct Brainfuck *brainfuck);
 
 int main(int argc, char *argv[]) {
 
+
+	struct Brainfuck brainfuck = { 
+		0,
+		0,
+		{0},
+		{0}
+	};
+	
+
 	if (argv[1] == NULL){
-		printf("Error: excpected file name argument\n");
+		printf("Error: excpected fp name argument\n");
         return 0;
 	}
 
-    FILE *file = fopen(argv[1], "r");
-    if (file == 0){
-        printf("Error: Could not open source file\n");
+
+    FILE *fp = fopen(argv[1], "r");
+    if (fp == NULL){
+        printf("Error: Could not open fp\n");
         return 0;
     }
 
-
-    while(1) {
-        char c = fgetc(file);
-        if (feof(file))
-            break ;
-
-
-		int gg = is_operation(c);
-		if (gg) {
-			operation(c);
+	while(1) {
+	    char c = fgetc(fp);
+	    if (feof(fp))
+	        break ;
+		if (is_operation(c)) {
+			brainfuck.programm[brainfuck.ins_ptr] = c;
+			brainfuck.ins_ptr++;
 		}
-        printf("%i", gg);
+	}
+	brainfuck.ins_ptr = 0;
+    fclose(fp);
 
+
+
+
+
+
+
+	printf("\n\n\n");
+	for (int i = 0; i < 30000; i++) {
+		if (brainfuck.programm[i] == 0){
+			break;
+		}
+		printf("%hhu ", brainfuck.programm[i]);
+	}
+	printf("\n\n\n");
+
+
+
+
+
+	for (int i = 0; i < 30000; i++) {
+		if (brainfuck.programm[i] == 0){
+			//printf("\nprogramm ended\n");
+			//exit(0);
+			break;
+		}
+		operation(brainfuck.programm[i], &brainfuck);
+		printf("%hhu ", brainfuck.programm[i]);
 	}
 
-    fclose(file);
+
+
 
 	return 0;
 }
-
 
 
 
@@ -56,40 +98,67 @@ int is_operation(char c){
 		return 0;
 	}
 }
-
-void operation(char c){
+//
+void operation(char c, struct Brainfuck *brainfuck){
 	switch (c) {
 		case '+':
-			memory[pointer]++;
+			brainfuck->memory[brainfuck->mem_ptr]++;
         	break;
 		case '-':
-			memory[pointer]--;
+			brainfuck->memory[brainfuck->mem_ptr]--;
         	break;
 		case '<':
-			if (pointer == 0){
-				pointer = memory_size-1;
+			if (brainfuck->mem_ptr == 0){
+				brainfuck->mem_ptr = MEMORY_SIZE-1;
 			}else{
-				pointer--;
+				brainfuck->mem_ptr--;
 			}
         	break;
 		case '>':
-			if (pointer == memory_size-1){
-				pointer = 0;
+			if (brainfuck->mem_ptr == MEMORY_SIZE-1){
+				brainfuck->mem_ptr = 0;
 			}else{
-				pointer++;
+				brainfuck->mem_ptr++;
 			}
         	break;
 		case '[':
-			
+			loop(c, brainfuck);
         	break;
 		case ']':
-			
         	break;
 		case '.':
-        	printf("%c", memory[pointer]);
+        	printf("(%c)(%ld)", brainfuck->memory[brainfuck->mem_ptr], brainfuck->mem_ptr);
         	break;
 		case ',':
-			
         	break;
+		default:
+        	printf("Error: unknown instruction `%c`\n",c);
+			exit(0);
 	}
+	brainfuck->ins_ptr++;
+}
+
+
+
+void loop(char c,  struct Brainfuck *brainfuck) {
+	brainfuck->ins_ptr++;
+	int loop_ins_start_ptr = brainfuck->ins_ptr;
+	int loop_counter_ptr = brainfuck->mem_ptr;
+	int loop_counter = 0;
+
+	while (brainfuck->memory[loop_counter_ptr] != 0){
+		if (brainfuck->memory[loop_counter_ptr] == ']'){
+			brainfuck->ins_ptr = loop_ins_start_ptr;
+		}else{
+			operation(brainfuck->memory[brainfuck->mem_ptr], brainfuck);
+			brainfuck->ins_ptr++;
+		}
+
+		if (loop_counter > MAX_LOOP_ITER) {
+			printf("\nmax loop iteration exceded\n");
+			exit(0);
+		}
+		loop_counter++;
+	}
+
 }
