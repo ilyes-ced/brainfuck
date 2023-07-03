@@ -120,6 +120,7 @@ void instruction(struct Brainfuck *brainfuck){
 			}
 			break;
 		case '[':
+			brainfuck->ins_ptr++;
 			loop(brainfuck);
 			break;
 		case ']':
@@ -146,7 +147,7 @@ void loop(struct Brainfuck *brainfuck) {
 	int loop_counter_ptr = brainfuck->mem_ptr;
 	int loop_counter = 0;
 
-	while (brainfuck->memory[brainfuck->mem_ptr] != 0){
+	while (brainfuck->memory[loop_counter_ptr] != 0){
 		if (loop_counter >= MAX_LOOP_ITER) {
 			printf("\nError: max loop iteration exceded\n");
 			exit(0);
@@ -158,21 +159,15 @@ void loop(struct Brainfuck *brainfuck) {
 			}else{
 				brainfuck->ins_ptr = loop_ins_start_ptr;
 			}
-		}else if(brainfuck->programm[brainfuck->ins_ptr] == '['){
-			if (brainfuck->memory[brainfuck->mem_ptr] == 0){
-				while (brainfuck->memory[brainfuck->mem_ptr] != ']'){
-					brainfuck->ins_ptr++;
-				}
-				brainfuck->ins_ptr++;
-				break;
-			}else{
-				brainfuck->ins_ptr++;
-			}
-		}
-		else{
+		}else{
 			instruction(brainfuck);
 			brainfuck->ins_ptr++;
 		}
 		loop_counter++;
 	}
+	if (brainfuck->programm[brainfuck->ins_ptr] == ']'){
+		brainfuck->ins_ptr++;
+	}
+
+
 }
