@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #define MEMORY_SIZE 30000
 #define PROGRAMM_SIZE 30000
-#define MAX_LOOP_ITER 10000
+#define MAX_LOOP_ITER 100
 
 
-struct Brainfuck {
+struct Bf {
 	// memory pointer(cursor)
 	long mem_ptr;
 	// instruction pointer(cursor)
@@ -16,24 +16,22 @@ struct Brainfuck {
 
 
 int is_instruction(char c);
-void instruction(struct Brainfuck *brainfuck);
-void loop(struct Brainfuck *brainfuck);
+void instruction(struct Bf *bf);
+void loop(struct Bf *bf);
 
 
 int main(int argc, char *argv[]) {
-	struct Brainfuck brainfuck = { 
+	struct Bf bf = { 
 		0,
 		0,
 		{0},
 		{0}
 	};
-	
 
 	if (argv[1] == NULL){
 		printf("Error: excpected fp name argument\n");
 		return 0;
 	}
-
 
 	FILE *fp = fopen(argv[1], "r");
 	if (fp == NULL){
@@ -41,46 +39,27 @@ int main(int argc, char *argv[]) {
 		return 0;
 	}
 
-
 	while(1) {
 		char c = fgetc(fp);
 		if (feof(fp))
 			break ;
 		if (is_instruction(c)) {
-			brainfuck.programm[brainfuck.ins_ptr] = c;
-			brainfuck.ins_ptr++;
+			bf.programm[bf.ins_ptr] = c;
+			bf.ins_ptr++;
 		}
 	}
-	brainfuck.ins_ptr = 0;
+	bf.ins_ptr = 0;
     fclose(fp);
 
-
-	printf("\n\n\n");
-	for (int i = 0; i < 30000; i++) {
-		if (brainfuck.programm[i] == 0){
-			break;
-		}
-		printf("%hhu ", brainfuck.programm[i]);
+	while (1) {
+		instruction(&bf);
+		bf.ins_ptr++;
 	}
-	printf("\n\n\n");
 
-
-	for (int i = 0; i < 30000; i++) {
-		if (brainfuck.programm[i] == 0){
-			//printf("\nprogramm ended\n");
-			//exit(0);
-			break;
-		}
-		instruction(&brainfuck);
-		brainfuck.ins_ptr++;
-	}
-	
-
-	printf("\n\n\n");
+	printf("\n\nmemory:\n\t");
 	for (int i = 0; i < 100; i++) {
-		printf("%hhu ", brainfuck.memory[i]);
+		printf("%hhu ", bf.memory[i]);
 	}
-	printf("\n\n\n");
 
 	return 0;
 }
@@ -97,82 +76,66 @@ int is_instruction(char c){
 
 
 
-void instruction(struct Brainfuck *brainfuck){
-	switch (brainfuck->programm[brainfuck->ins_ptr]) {
-		case '+':
-			brainfuck->memory[brainfuck->mem_ptr]++;
-			break;
-		case '-':
-			brainfuck->memory[brainfuck->mem_ptr]--;
-			break;
+void instruction(struct Bf *bf){
+	switch (bf->programm[bf->ins_ptr]) {
+		case '+': bf->memory[bf->mem_ptr]++; break;
+		case '-': bf->memory[bf->mem_ptr]--; break;
 		case '<':
-			if (brainfuck->mem_ptr == 0){
-				brainfuck->mem_ptr = MEMORY_SIZE-1;
-			}else{
-				brainfuck->mem_ptr--;
-			}
+			if (bf->mem_ptr == 0) bf->mem_ptr = MEMORY_SIZE-1;
+			else bf->mem_ptr--;
 			break;
 		case '>':
-			if (brainfuck->mem_ptr == MEMORY_SIZE-1){
-				brainfuck->mem_ptr = 0;
-			}else{
-				brainfuck->mem_ptr++;
-			}
+			if (bf->mem_ptr == MEMORY_SIZE-1) bf->mem_ptr = 0;
+			else bf->mem_ptr++;
 			break;
 		case '[':
-			loop(brainfuck);
+			if (bf->memory[bf->mem_ptr] != 0){
+				printf("%c ", bf->programm[bf->ins_ptr]);
+				bf->ins_ptr++;
+				printf("%c ", bf->programm[bf->ins_ptr]);
+				loop(bf);
+			}else{
+				while(bf->programm[bf->ins_ptr] != ']'){
+				    bf->ins_ptr++;
+				}
+				bf->ins_ptr++;
+			}
 			break;
 		case ']':
-			// never reached
-			brainfuck->ins_ptr++;
+			printf("*******************%c \n", bf->programm[bf->ins_ptr+1]);
 			break;
-		case '.':
-			printf("%i ", brainfuck->memory[brainfuck->mem_ptr]);
-			break;
-		case ',':
-			break;
+		case '.': printf("prints:%i ", bf->memory[bf->mem_ptr]); break;
+		case ',': break;
 		default:
-			//printf("\nError: unknown instruction %c\n", brainfuck->programm[brainfuck->ins_ptr]);
-			//exit(0);
+			printf("\n\nmemory:\n\t");
+			for (int i = 0; i < 100; i++) {
+				printf("%hhu ", bf->memory[i]);
+			}
+			printf("\n\n\n");
+			exit(0);
 	}
-
-	//printf("%c", brainfuck->programm[brainfuck->ins_ptr]);
 }
 
 
 
-void loop(struct Brainfuck *brainfuck) {
-	int loop_ins_start_ptr = brainfuck->ins_ptr;
-	int loop_counter_ptr = brainfuck->mem_ptr;
+void loop(struct Bf *bf) {
+	int loop_start_ins_index = bf->ins_ptr;
 	int loop_counter = 0;
-
-	while (brainfuck->memory[brainfuck->mem_ptr] != 0){
-		if (loop_counter >= MAX_LOOP_ITER) {
-			printf("\nError: max loop iteration exceded\n");
-			exit(0);
-		}
-		if (brainfuck->programm[brainfuck->ins_ptr] == ']'){
-			if (brainfuck->memory[brainfuck->mem_ptr] == 0){
-				brainfuck->ins_ptr++;
+	while (1) {
+		if (bf->programm[bf->ins_ptr] == ']') {
+			if (bf->memory[bf->mem_ptr] == 0){
+				bf->ins_ptr++;
 				break;
-			}else{
-				brainfuck->ins_ptr = loop_ins_start_ptr;
 			}
-		}else if(brainfuck->programm[brainfuck->ins_ptr] == '['){
-			if (brainfuck->memory[brainfuck->mem_ptr] == 0){
-				while (brainfuck->memory[brainfuck->mem_ptr] != ']'){
-					brainfuck->ins_ptr++;
-				}
-				brainfuck->ins_ptr++;
-				break;
-			}else{
-				brainfuck->ins_ptr++;
+			else{
+				//printf("(%hhu) ", bf->memory[bf->mem_ptr]);
+				bf->ins_ptr = loop_start_ins_index;
 			}
+		}else{
+			//printf("%hhu ", bf->memory[bf->mem_ptr]);
+			//printf("<%hhu> ", loop_start_ins_index);
+			instruction(bf);
+			bf->ins_ptr++;
 		}
-		else{
-			instruction(brainfuck);
-			brainfuck->ins_ptr++;
-		}
-		loop_counter++;
 	}
 }

@@ -169,3 +169,12 @@ void loop(struct Brainfuck *brainfuck) {
 
 	//printf("\nloop start %i \n", loop_counter);
 }
+
+
+
+
+/**
+ * @brief 
+
+ * 
+ */
