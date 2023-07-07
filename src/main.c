@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #define MEMORY_SIZE 30000
 #define PROGRAMM_SIZE 30000
 
@@ -8,6 +9,8 @@ struct Bf {
 	long mem_ptr;
 	// instruction pointer(cursor)
 	long ins_ptr;
+	// input pointer(cursor)
+	long inp_ptr;
 	unsigned char programm[PROGRAMM_SIZE];
 	unsigned char memory[MEMORY_SIZE];
 	unsigned char input[MEMORY_SIZE];
@@ -23,6 +26,8 @@ int main(int argc, char *argv[]) {
 	struct Bf bf = { 
 		0,
 		0,
+		0,
+		{0},
 		{0},
 		{0}
 	};
@@ -30,6 +35,11 @@ int main(int argc, char *argv[]) {
 	if (argv[1] == NULL){
 		printf("Error: excpected fp name argument\n");
 		return 0;
+	}
+	if (argc == 3){
+		for (int i=0; i < argv[2][strlen(argv[2]) - 1]; i++) {
+			bf.input[i] = argv[2][i];
+		}
 	}
 
 	FILE *fp = fopen(argv[1], "r");
@@ -54,12 +64,6 @@ int main(int argc, char *argv[]) {
 		instruction(&bf);
 		bf.ins_ptr++;
 	}
-
-	printf("\n\nmemory:\n\t");
-	for (int i = 0; i < 100; i++) {
-		printf("%hhu ", bf.memory[i]);
-	}
-
 	return 0;
 }
 
@@ -100,13 +104,15 @@ void instruction(struct Bf *bf){
 			}
 			break;
 		case ']':
-			printf("*******************%c \n", bf->programm[bf->ins_ptr+1]);
+			// never happens
 			break;
 		case '.': printf("%c", bf->memory[bf->mem_ptr]); break;
-		case ',': break;
+		case ',':
+			bf->memory[bf->mem_ptr] = bf->input[bf->inp_ptr];
+			bf->inp_ptr++;
+			break;
 		default:
-			
-			exit(0);
+			exit(0); // end of proggramm
 	}
 }
 
@@ -116,8 +122,7 @@ void loop(struct Bf *bf) {
 		if (bf->programm[bf->ins_ptr] == ']') {
 			if (bf->memory[bf->mem_ptr] == 0){
 				break;
-			}
-			else{
+			}else{
 				bf->ins_ptr = loop_start_ins_index;
 			}
 		}else{

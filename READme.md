@@ -1,5 +1,14 @@
-doesnt support the operations commands as comments
+compile
+```
+gcc src/main.c -o output/main
+```
 
-gcc src/main.c -o output/main && ./output/main bf
+"" for multy word inputs (not required)
 
-![](brainfuck.jpg)
+examples
+```
+./output/main <file_path> <OPTIONAL: "input string">
+./output/main bf "test input"
+./output/main bf test_input
+```
+
