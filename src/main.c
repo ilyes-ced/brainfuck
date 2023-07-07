@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #define MEMORY_SIZE 30000
 #define PROGRAMM_SIZE 30000
-#define MAX_LOOP_ITER 100
-
 
 struct Bf {
 	// memory pointer(cursor)
@@ -12,13 +10,14 @@ struct Bf {
 	long ins_ptr;
 	unsigned char programm[PROGRAMM_SIZE];
 	unsigned char memory[MEMORY_SIZE];
+	unsigned char input[MEMORY_SIZE];
 };
 
 
 int is_instruction(char c);
 void instruction(struct Bf *bf);
 void loop(struct Bf *bf);
-
+void debug(struct Bf *bf);
 
 int main(int argc, char *argv[]) {
 	struct Bf bf = { 
@@ -27,7 +26,7 @@ int main(int argc, char *argv[]) {
 		{0},
 		{0}
 	};
-
+	
 	if (argv[1] == NULL){
 		printf("Error: excpected fp name argument\n");
 		return 0;
@@ -77,22 +76,21 @@ int is_instruction(char c){
 
 
 void instruction(struct Bf *bf){
+	//debug(bf);
 	switch (bf->programm[bf->ins_ptr]) {
 		case '+': bf->memory[bf->mem_ptr]++; break;
 		case '-': bf->memory[bf->mem_ptr]--; break;
 		case '<':
-			if (bf->mem_ptr == 0) bf->mem_ptr = MEMORY_SIZE-1;
+			if (bf->mem_ptr == 0) bf->mem_ptr = MEMORY_SIZE-1; // maybe error here
 			else bf->mem_ptr--;
 			break;
 		case '>':
-			if (bf->mem_ptr == MEMORY_SIZE-1) bf->mem_ptr = 0;
+			if (bf->mem_ptr == MEMORY_SIZE-1) bf->mem_ptr = 0; // maybe error here 
 			else bf->mem_ptr++;
 			break;
 		case '[':
 			if (bf->memory[bf->mem_ptr] != 0){
-				printf("%c ", bf->programm[bf->ins_ptr]);
 				bf->ins_ptr++;
-				printf("%c ", bf->programm[bf->ins_ptr]);
 				loop(bf);
 			}else{
 				while(bf->programm[bf->ins_ptr] != ']'){
@@ -104,38 +102,33 @@ void instruction(struct Bf *bf){
 		case ']':
 			printf("*******************%c \n", bf->programm[bf->ins_ptr+1]);
 			break;
-		case '.': printf("prints:%i ", bf->memory[bf->mem_ptr]); break;
+		case '.': printf("%c", bf->memory[bf->mem_ptr]); break;
 		case ',': break;
 		default:
-			printf("\n\nmemory:\n\t");
-			for (int i = 0; i < 100; i++) {
-				printf("%hhu ", bf->memory[i]);
-			}
-			printf("\n\n\n");
+			
 			exit(0);
 	}
 }
 
-
-
 void loop(struct Bf *bf) {
 	int loop_start_ins_index = bf->ins_ptr;
-	int loop_counter = 0;
 	while (1) {
 		if (bf->programm[bf->ins_ptr] == ']') {
 			if (bf->memory[bf->mem_ptr] == 0){
-				bf->ins_ptr++;
 				break;
 			}
 			else{
-				//printf("(%hhu) ", bf->memory[bf->mem_ptr]);
 				bf->ins_ptr = loop_start_ins_index;
 			}
 		}else{
-			//printf("%hhu ", bf->memory[bf->mem_ptr]);
-			//printf("<%hhu> ", loop_start_ins_index);
 			instruction(bf);
 			bf->ins_ptr++;
 		}
 	}
 }
+
+//void debug(struct Bf *bf) {
+//	printf("==========================================================");
+//	printf("memory %hhu at [%li] ", bf->memory[bf->mem_ptr], bf->mem_ptr);
+//	printf("===== instruction %c at [%li] \n", bf->programm[bf->ins_ptr], bf->ins_ptr);
+//}
